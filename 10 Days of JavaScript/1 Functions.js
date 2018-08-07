@@ -25,6 +25,7 @@ function readLine() {
 /*
  * Create the function factorial here
  */
+
 /*function factorial(n) {
   let multi = n;
   for (let i = 1; i < n; i++) {
@@ -32,6 +33,10 @@ function readLine() {
   }
   return multi;
 }*/
+
+function factorial(n) {
+  return n < 1 ? 1 : n * factorial(n - 1);
+}
 
 function main() {
   const n = +(readLine());
