@@ -7,31 +7,39 @@ let inputString = '';
 let currentLine = 0;
 
 process.stdin.on('data', inputStdin => {
-    inputString += inputStdin;
+  inputString += inputStdin;
 });
 
 process.stdin.on('end', _ => {
-    inputString = inputString.trim().split('\n').map(string => {
-        return string.trim();
-    });
+  inputString = inputString.trim().split('\n').map(string => {
+    return string.trim();
+  });
 
-    main();
+  main();
 });
 
 function readLine() {
-    return inputString[currentLine++];
+  return inputString[currentLine++];
 }
 
 /*
  * Create the function factorial here
  */
 
+/*function factorial(n) {
+  let multi = n;
+  for (let i = 1; i < n; i++) {
+    multi *= i;
+  }
+  return multi;
+}*/
+
 function factorial(n) {
-    return n < 1 ? 1 : n * factorial(n - 1);
+  return n < 1 ? 1 : n * factorial(n - 1);
 }
 
 function main() {
-    const n = +(readLine());
+  const n = +(readLine());
 
-    console.log(factorial(n));
+  console.log(factorial(n));
 }
